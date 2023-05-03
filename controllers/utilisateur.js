@@ -11,13 +11,19 @@ const utilisateurValidationRules = () => {
       .trim()
       .isLength({ min: 1 })
       .escape()
-      .withMessage("First name must be specified."),
+      .withMessage("Name must be specified."),
 
     body("origine")
       .trim()
       .isLength({ min: 1 })
       .escape()
-      .withMessage("Last name must be specified."),
+      .withMessage("Origine must be specified."),
+
+    body("userUrl")
+      .trim()
+      .isLength({ min: 1 })
+      .escape()
+      .withMessage("Url must be specified."),
   ];
 };
 
@@ -70,6 +76,7 @@ exports.create = [
       _id: req.body.id,
       name: req.body.name,
       origine: req.body.origine,
+      userUrl: req.body.userUrl,
     });
 
     // Ajout de utilisateur dans la bdd
@@ -116,6 +123,7 @@ exports.update = [
       _id: req.body.id,
       name: req.body.name,
       origine: req.body.origine,
+      userUrl: req.body.userUrl,
     });
 
     Utilisateur.findByIdAndUpdate(

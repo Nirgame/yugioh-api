@@ -27,6 +27,12 @@ const carteValidationRules = () => {
       .escape()
       .withMessage("Card description must be specified."),
 
+    body("cardUrl")
+      .trim()
+      .isLength({ min: 1 })
+      .escape()
+      .withMessage("Card url must be specified."),
+
     body("utilisateur", "Invalid user")
       .trim()
       .isLength({ min: 1 })
@@ -85,6 +91,7 @@ exports.create = [
       cardName: req.body.cardName,
       cardType: req.body.cardType,
       cardDescription: req.body.cardDescription,
+      cardUrl: req.body.cardUrl,
       utilisateur: req.body.utilisateur,
     });
 
@@ -152,6 +159,7 @@ exports.update = [
       cardName: req.body.cardName,
       cardType: req.body.cardType,
       cardDescription: req.body.cardDescription,
+      cardUrl: req.body.cardUrl,
       utilisateur: req.body.utilisateur,
     });
 

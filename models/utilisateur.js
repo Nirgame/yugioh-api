@@ -12,6 +12,7 @@ const utilisateurSchema = new mongoose.Schema({
     required: true,
     enum: ["YuGiOh", "YuGiOh Gx", "YuGiOh 5ds", "YuGiOh Arc-V", "YuGiOh Zexal"],
   },
+  userUrl: { type: String, required: true },
 });
 
 // (Étape 3) Création d'une nouvelle propriété virtuelle "id" qui aura la valeur de la propriété "_id"
