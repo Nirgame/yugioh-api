@@ -14,7 +14,7 @@ const carteSchema = new mongoose.Schema({
     enum: ["Magie", "Piège", "Monstre"],
   },
   cardDescription: { type: String, required: true },
-  cardURl: { type: String, required: true },
+  cardUrl: { type: String, required: true },
   utilisateur: { type: Number, required: true, ref: "utilisateurs" },
 });
 
