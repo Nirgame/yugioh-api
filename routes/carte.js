@@ -25,8 +25,5 @@ router.delete("/:id", carte_controller.delete);
 // afficher celon utilisateur
 router.get("/user/:id", carte_controller.getByUser);
 
-// suppression celon utilisateur
-router.get("/user/:id", carte_controller.deleteByUser);
-
 // Export du router
 module.exports = router;
