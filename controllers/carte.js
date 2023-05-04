@@ -30,7 +30,6 @@ const carteValidationRules = () => {
     body("cardUrl")
       .trim()
       .isLength({ min: 1 })
-      .escape()
       .withMessage("Card url must be specified."),
 
     body("utilisateur", "Invalid user")

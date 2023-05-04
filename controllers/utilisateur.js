@@ -22,7 +22,6 @@ const utilisateurValidationRules = () => {
     body("userUrl")
       .trim()
       .isLength({ min: 1 })
-      .escape()
       .withMessage("Url must be specified."),
   ];
 };
