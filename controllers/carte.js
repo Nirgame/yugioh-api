@@ -195,3 +195,25 @@ exports.delete = [
     });
   },
 ];
+
+// Delete
+exports.deleteByUser = [
+  paramIdValidationRule(),
+  checkValidity,
+  (req, res, next) => {
+    Carte.findOneAndRemove({ utilisateur: req.params.id }).exec(function (
+      err,
+      result
+    ) {
+      if (err) {
+        return res.status(500).json(err);
+      }
+      if (!result) {
+        res
+          .status(404)
+          .json("Card with id " + req.params.id + " is not found !");
+      }
+      return res.status(200).json("Card deleted successfully !");
+    });
+  },
+];
